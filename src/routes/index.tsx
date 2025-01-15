@@ -60,7 +60,7 @@ export default function Finance() {
 
       <div>
         <div class="border border-gray-500  max-w-fit p-2 rounded-sm flex gap-2">
-          <span> Starting amount: {initialAmount()} </span>
+          <span> Starting amount: {numberFormat(initialAmount())} </span>
           <span class="text-red-500">|</span>
           <span> Days: {days()} </span>
         </div>
