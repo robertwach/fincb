@@ -68,12 +68,14 @@ export default function Finance() {
         <br />
 
         <div>
-          <b> Interest:</b> {Math.ceil(calculateValue())}
+          <b> Interest:</b> {numberFormat(calculateValue())}
         </div>
         <div>
-          <b>Total:</b> {numberFormat(Math.ceil(calculateValue() + initialAmount()))} {' '}
+          <b>Total:</b> {(
+            (calculateValue() + initialAmount()).toFixed(2)
+          )} {' '}
 
-          <i>(Ksh {numberFormat(Math.ceil(calculateValue() + initialAmount()) * 130)})</i>
+          <i>(Ksh {numberFormat((calculateValue() + initialAmount()) * 130)})</i>
         </div>
       </div>
 
