@@ -10,7 +10,7 @@ export default function Finance() {
   const [initialAmount, setInitialAmount] = createSignal(1000);
   const [days, setDays] = createSignal(30);
 
-  const interestRate = 0.012;
+  const interestRate = 0.0156;
 
   const calculateCompoundInterest = (amount: number) => {
     return (amount * interestRate);
