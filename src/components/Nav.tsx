@@ -8,13 +8,13 @@ export default function Nav() {
     <nav class="bg-sky-800">
       <ul class="container flex items-center p-3 text-gray-200">
         <li class={`border-b-2 ${active("/")} mx-1.5 sm:mx-6`}>
-          <a href="/">Home</a>
+          <a href="/">Platform C</a>
         </li>
         <li class={`border-b-2 ${active("/x")} mx-1.5 sm:mx-6`}>
-          <a href="/x">Platform X</a>
+          <a href="/x">Platform P</a>
         </li>
         <li class={`border-b-2 ${active("/y")} mx-1.5 sm:mx-6`}>
-          <a href="/y">Platform Y</a>
+          <a href="/y">Platform NT</a>
         </li>
         {/* <li class={`border-b-2 ${active("/about")} mx-1.5 sm:mx-6`}>
           <a href="/about">About</a>
