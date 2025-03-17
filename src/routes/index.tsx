@@ -10,6 +10,8 @@ export default function Finance() {
   const [initialAmount, setInitialAmount] = createSignal(1000);
   const [days, setDays] = createSignal(30);
 
+  const [hasInvite, setHasInvite] = createSignal(false);
+
   const interestRate = 0.88;
 
   const calculateCompoundInterest = (amount: number) => {
@@ -20,13 +22,20 @@ export default function Finance() {
     // let value = initialAmount();
     let interest = 0;
     for (let i = 0; i < days(); i++) {
+      let signalThree = 0;
+
       // signal 1
       const signalOne = calculateCompoundInterest(interest + initialAmount());
+      // console.log(signalOne, 'signalOne');
 
       // signal 2
       const signalTwo = calculateCompoundInterest((interest + signalOne) + initialAmount());
 
-      interest = interest + (signalOne + signalTwo);
+      if (hasInvite()) {
+        signalThree = calculateCompoundInterest((interest + signalTwo + signalOne) + initialAmount());
+      }
+
+      interest = interest + (signalOne + signalTwo + signalThree);
     }
     return interest;
   }
@@ -56,6 +65,15 @@ export default function Finance() {
         </div>
 
 
+      </section>
+
+      <section class="flex items-center gap-2">
+
+        <input type="checkbox" id="hasInvite" onChange={(e) => {
+          // console.log(e.target.checked);
+          setHasInvite(e.target.checked)
+        }} />
+        <label for="hasInvite" class=" cursor-pointer">Do you have an invite? (600 USD) </label>
       </section>
 
       <div>
